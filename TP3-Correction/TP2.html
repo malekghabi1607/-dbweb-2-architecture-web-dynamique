@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>TP2-partie2</title>
+    <style>
+         
+        #act{    
+            width: 300px;
+            }
+    </style>
+
+    <script language="Javascript">
+        function ExitModal(event){
+            var id_element = event.target.id;
+            if(id_element == "LeModal"){
+                document.getElementById("LeModal").style.display='none';
+            }
+        }
+
+        function ajouter(){
+            var x = document.getElementById("act");
+            var nouvelleActivite = document.createElement("option");
+            nouvelleActivite.value = document.getElementById('autre').value;
+            nouvelleActivite.text = document.getElementById('autre').value;
+            nouvelleActivite.selected = true;
+            if (nouvelleActivite.value!='') {
+                x.add(nouvelleActivite);    
+            }
+        }
+        function VerifAge() {
+            var x = document.getElementById("age");
+            if (x.value<=0 || x.value>=150 || !age) {
+                alert("Age dehors [0,150]");
+                return false;
+            }
+            return true;         
+        }
+        function VerifMail(){
+            var x=document.getElementById("mail").value;
+            var re = /\S+@alumni\.univ-avignon\.fr/;
+            if(!re.test(x)){
+                alert("le format du mail : prenom.nom@alumni.univ-avignon.fr");
+                return false;
+            }
+            return true;
+        }
+        function VerifTout(){
+            if(VerifAge()){
+                if(VerifMail()){
+                    alert("Le formulaire est soumis");
+                    document.getElementById("formulaire").submit();
+                } 
+            }
+        }
+
+        
+    </script> 
+</head>
+
+
+<body>
+    <main class="w3-container w3-content">
+       
+        <button onclick="document.getElementById('LeModal').style.display='block'" style="position : relative ; left : 85%" class="w3-button w3-red w3-padding-large w3-large w3-margin-top">Fomulaire de Contact</button>
+
+        <p>
+           <h1> Merci de cliquer sur le bouton <span class="w3-text-red"> "Formulaire de contact" </span></h1>
+        </p>
+    <div id="LeModal" class="w3-modal" onclick="ExitModal(event)">   
+        <section class="w3-modal-content w3-card-4 w3-display-container">
+            <div class="w3-container w3-teal">
+                <h2>Formulaire de contact</h2>
+            </div>
+            <span onclick="document.getElementById('LeModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <form method="GET" class="w3-container" id="fomulaire">
+                <p>
+                    <label for="nom" class="w3-text-teal">Nom</label>
+                    <input type="text" name="nom" id="nom" class="w3-input" placeholder="Votre nom" onfocus="this.placeholder=''"/>
+                </p>
+                <p>
+                    <label for="prenom" class="w3-text-teal">Prénom</label>
+                    <input type="text" name="prenom" id="prenom" class="w3-input" placeholder="Votre prénom" onfocus="this.placeholder=''"/>
+                </p>
+                <p>
+                    <label for="age" class="w3-text-teal">Age</label>
+                    <input type="text" name="age" id="age" class="w3-input" onkeypress="if(event.which==13){VerifAge()}"/>
+                </p>
+                <p>
+                    <label for="mail" class="w3-text-teal">adresse mail</label>
+                    <input type="text" name="mail" id="mail" class="w3-input" placeholder="prenom.nom@alumni.univ-avignon.fr" onkeypress="if(event.which==13){VerifMail()}"/>
+                </p>
+                <p>
+                    <label for="mdp" class="w3-text-teal">Mot de passe</label>
+                    <input type="password" name="mdp" id="mdp" class="w3-input" />
+                </p>
+                <p>
+                    <label for="confirmation" class="w3-text-teal">Retaper le mot de passe</label>
+                    <input type="password" name="confirmation" id="confirmation" class="w3-input" />
+                </p>
+                <p><span class="w3-text-teal w3-show-block">Sexe</span>
+                    <span class="w3-show-block">
+                        <input type="radio" name="sexe" value="h" id="h" class="w3-radio" checked/>
+                         <label for="h">H</label>
+                    </span>
+                    <span class="w3-show-block">
+                        <input type="radio" name="sexe" value="f" id="f" class="w3-radio" />
+                        <label for="f">F</label>
+                    </span>
+                </p>
+                <p><span class="w3-text-teal w3-show-block">Sport</span>
+                   
+                        <span class="w3-show-block">
+                            <input type="checkbox" name="sport" id="sport" class="w3-check" />
+                            <label for="sport">Sport1</label>
+                        </span>
+                        <span class="w3-show-block">
+                            <input type="checkbox" name="sport" id="sport" class="w3-check" />
+                            <label for="sport">Sport2</label>
+                        </span>
+                        <span class="w3-show-block">
+                            <input type="checkbox" name="sport" id="sport" class="w3-check" />
+                            <label for="sport">Sport3</label>
+                        </span>
+                    
+                </p>
+            
+                
+                <p>
+                    <label  for="liste" class="w3-text-teal">  Activité principale</label> <br>
+                    <select id="act" name="liste" id="liste" class="w3-select">
+                        <option value="Activité1">Activité1</option>
+                        <option value="Activité2" selected>Activité2</option>
+                        <option value="Activité3">Activité3</option>
+                    </select>
+                
+                </p>
+
+                <p>
+                    <label for="autre" class="w3-text-red">Autre,  précisez:</label>
+                    <input type="text" id="autre" name="autre" class="w3-input" style="background-color: cyan;">
+                    <button type="button" class="w3-btn w3-cyan" onclick="ajouter()">Ajouter</button>
+                </p>
+               
+                <p>
+             
+
+
+                <label for="moyen" class="w3-text-teal">Moyens pour se rendre en stage</label>
+                    <select name="moyen" id="moyen" multiple class="w3-select w3-border" size="7">
+                      <optgroup label="Moyens Personnels">
+                        <option value="vélo">vélo</option>
+                        <option value="moto">moto</option>
+                        <option value="voiture">voiture</option>
+                        <option value="trotinette" disabled>trotinette</option>
+                      </optgroup>
+                      <optgroup label="Transport en commun">
+                        <option value="bus">bus</option>
+                       <option value="train">train</option>
+                      </optgroup>
+                    </select>
+                  </label>
+                </p>
+
+                <p>
+                    <label for="message" class="w3-text-teal">Commentaires</label>
+                    <textarea name="message" id="message" rows="3" class="w3-input"></textarea>
+
+                </p>
+
+                <p>
+                    <button class="w3-btn w3-teal" onclick="VerifTout()">Envoyer</button>
+                    <button class="w3-btn w3-teal">Réinitialiser</button>
+                </p>
+
+
+
+                  
+            </form>
+        </section>
+    </div>
+    </main>
+
+</body>
+
+</html>

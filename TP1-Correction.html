@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>Correction DBWEB2 - TP1</title>
+</head>
+
+<body>
+    <header class="w3-bar w3-teal w3-padding">
+        <h1 class="w3-bar-item">Bienvenue pour la formation Yoga</h1>
+    </header>
+    <main class="w3-container w3-content">
+        <section class="w3-card-4 w3-display-container w3-margin">
+            <div class="w3-container w3-teal">
+                <h2>Formulaire de contact</h2>
+            </div>
+            <form method="GET" class="w3-container">
+                <p>
+                    <label for="prenom" class="w3-text-teal">Prénom</label>
+                    <input type="text" name="prenom" id="prenom" class="w3-input" />
+                </p>
+                <p>
+                    <label for="nom" class="w3-text-teal">Nom</label>
+                    <input type="text" name="nom" id="nom" class="w3-input" />
+                </p>
+                <p>
+                    <label for="age" class="w3-text-teal">Âge</label>
+                    <input type="text" name="age" id="age" class="w3-input" />
+                </p>
+                <p>
+                    <label for="email" class="w3-text-teal">Adresse e-mail</label>
+                    <input type="text" placeholder="prenom.nom@univ-avignon.fr" size=23 name="email" id="email" class="w3-input" />
+                </p>
+                <p>
+                    <label for="pass" class="w3-text-teal">Mot de passe</label>
+                    <input type="password" name="pass" id="pass" class="w3-input" />
+                </p>
+                <p>
+                    <label for="confirmation" class="w3-text-teal">Retapez votre mot de passe</label>
+                    <input type="password" name="confirmation" id="confirmation" class="w3-input" />
+                </p>
+               <p><span class="w3-text-teal w3-show-block">Genre</span>
+                    <span class="w3-show-block">
+                        <input type="radio" name="sexe" value="homme" id="homme" class="w3-radio" />
+                        <label for="homme">Homme</label>
+                    </span>
+                    <span class="w3-show-block">
+                        <input type="radio" name="sexe" value="femme" id="femme" class="w3-radio" />
+                        <label for="femme">Femme</label>
+                    </span>
+                    <span class="w3-show-block">
+                        <input type="radio" name="sexe" value="nonbinaire" id="nonbinaire" class="w3-radio" />
+                        <label for="homme">Non binaire</label>
+                    </span>
+                </p>
+                <p><span class="w3-text-teal w3-show-block">Sports pratiqués régulièrement</span>
+                    <span class="w3-half">
+                        <span class="w3-show-block">
+                            <input type="checkbox" name="sports" value="Football" id="football" class="w3-check" />
+                            <label for="cinema">Football</label>
+                        </span>
+                        <span class="w3-show-block">
+                            <input type="checkbox" name="sports" value="Équitation" id="equitation" class="w3-check" />
+                            <label for="equitation">Équitation</label>
+                        </span>
+                        <span class="w3-show-block">
+                            <input type="checkbox" name="sports" value="Basket" id="basket" class="w3-check" />
+                            <label for="planche">Basket</label>
+                        </span>
+                    </span>
+                    <span class="w3-half">
+                        <span class="w3-show-block">
+                            <input type="checkbox" name="sports" value="Natation" id="natation" class="w3-check" />
+                            <label for="musique">Natation</label>
+                        </span>
+                        <span class="w3-show-block">
+                            <input type="checkbox" name="sports" value="Velo" id="velo" class="w3-check" />
+                            <label for="theatre">Vélo</label>
+                        </span>
+                        <span class="w3-show-block">
+                            <input type="checkbox" name="sports" value="Autre" id="autre" class="w3-check" />
+                            <label for="rien">Autre</label>
+                        </span>
+                    </span>
+                </p>
+				<p>
+                    <label for="profession" class="w3-text-teal">Activité principale</label>
+                    <select name="activite" id="activite" class="w3-select">
+                        <option value="lyceen">Lycéen(ne)</option>
+                        <option value="etudiant" selected>Étudiant(e)</option>
+                        <option value="stagiaire">Stagiaire</option>
+                        <option value="employé">Employé(e)</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="transport" class="w3-text-teal">Transport pour se rendre au stage</label>
+                    <select name="transport" id="transport" size="5" class="w3-select" multiple="multiple">
+                        <option value="voiture">Voiture</option>
+                        <option value="trotinette">Trotinette</option>
+                        <option value="velo">Vélo</option>
+                        <option value="bus">Bus</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </p> 
+                <p>
+                    <label for="message" class="w3-text-teal">Autres informations</label>
+                    <textarea name="message" id="message" rows="4" class="w3-input"></textarea>
+                </p>
+                <p>
+                    <button type="submit" class="w3-btn w3-teal">Soumettre</button>
+                    <button type="reset" class="w3-btn w3-teal">Recommencer</button>
+                </p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

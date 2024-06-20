@@ -1,0 +1,5 @@
+albert|camus|la peste|1947|336|5
+gustave|flaubert|salammbô|1862|544|4
+jean-paul|sarte|les mots|1963|255|4
+honoré|de balzac|illusions perdues|1837|699|5
+guy|de maupassant|bel-ami|1885|367|3
